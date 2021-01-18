@@ -9,14 +9,17 @@ print(f.renderText('Y0u+uB3-D7'))
 
 url = input('Enter video url:')
 youtube = pytube.YouTube(url)
-strema = youtube.streams.all()
 tits = youtube.title()
+print('[+]Getting streams-list for:',tits)
+strema = youtube.streams.all()
+
 
 for i in strema:
     print(i)
 
 x = input('Enter itag id:')
 vid = youtube.streams.get_by_itag(x)
+#Add path of preference
 vid.download('Desktop/Necromoda')
 
 print('done')
